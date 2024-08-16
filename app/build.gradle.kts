@@ -71,8 +71,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-
-
     // coil
     implementation("io.coil-kt:coil-compose:2.2.2")
 
@@ -80,18 +78,14 @@ dependencies {
     // icons
     implementation ("androidx.compose.material:material-icons-extended:1.6.7")
 
-
-
     // view model
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
 
-
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
-
 
 
     // Dagger Hilt
@@ -100,11 +94,9 @@ dependencies {
     ksp("androidx.hilt:hilt-compiler:1.0.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-
     // okhttp
     implementation ("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
-
 
     // gson
     implementation ("com.google.code.gson:gson:2.9.0")
@@ -115,7 +107,6 @@ dependencies {
     // Paging
     implementation ("androidx.paging:paging-runtime-ktx:3.1.1")
     implementation ("androidx.paging:paging-compose:1.0.0-alpha18")
-
 
     implementation("androidx.room:room-ktx:2.5.1")
     ksp("androidx.room:room-compiler:2.5.1")
