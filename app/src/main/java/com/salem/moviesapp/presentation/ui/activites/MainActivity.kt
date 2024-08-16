@@ -4,14 +4,21 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.salem.moviesapp.presentation.ui.activites.screens.MovieListScreen
+import androidx.navigation.NavHost
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.salem.moviesapp.presentation.navigations.NestedNavGraph
+import com.salem.moviesapp.presentation.ui.activites.screens.movie_details_screen.MovieDetailsScreen
 import com.salem.moviesapp.presentation.ui.theme.MoviesAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.serialization.Serializable
 
 
 @AndroidEntryPoint
@@ -21,17 +28,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MoviesAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MovieListScreen( paddingValues =  innerPadding)
-                }
+                NestedNavGraph()
             }
         }
     }
 }
 
-@Preview( showBackground = true )
-@Composable
-fun GreetingPreview() {
-    MoviesAppTheme {
-    }
-}

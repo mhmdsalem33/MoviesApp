@@ -1,4 +1,4 @@
-package com.salem.moviesapp.data.entity
+package com.salem.moviesapp.data.entity.movies_list
 
 
 import androidx.annotation.Keep

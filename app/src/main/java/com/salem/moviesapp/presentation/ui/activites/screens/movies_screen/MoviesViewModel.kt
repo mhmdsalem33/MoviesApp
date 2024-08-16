@@ -1,4 +1,4 @@
-package com.salem.moviesapp.presentation.ui.activites
+package com.salem.moviesapp.presentation.ui.activites.screens.movies_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,14 +12,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class MoviesViewModel @Inject constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
     private val refreshMoviesUseCase: RefreshMoviesUseCase
 
 ) : ViewModel(){
 
 
-    var currentPage = 1
+    private var currentPage = 1
 
     init {
         viewModelScope.launch {

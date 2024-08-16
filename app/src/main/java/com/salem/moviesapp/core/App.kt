@@ -1,4 +1,4 @@
-package com.salem.moviesapp
+package com.salem.moviesapp.core
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

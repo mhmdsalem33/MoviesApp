@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
     id("dagger.hilt.android.plugin")
     id("kotlin-parcelize")
     id("com.google.devtools.ksp")
@@ -71,6 +72,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
+
+
+    implementation(libs.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+
     // coil
     implementation("io.coil-kt:coil-compose:2.2.2")
 
@@ -112,6 +118,9 @@ dependencies {
     ksp("androidx.room:room-compiler:2.5.1")
     implementation("androidx.room:room-paging:2.5.1")
 
+
+
+    implementation ("com.github.MahboubehSeyedpour:jetpack-loading:1.1.0")
 
 
 

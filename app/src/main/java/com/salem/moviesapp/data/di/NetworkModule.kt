@@ -34,7 +34,7 @@ object NetworkModule {
                         header("Accept"          , "application/json")
                         header("Content-Type"    ,  "application/json")
                         header("Accept-Language" ,  "en")
-                        header("Authorization"   ,  " Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjFiNDMzYzU0YTQyOGQyNDkyMzA0N2M0YmYwMWZlNSIsIm5iZiI6MTcyMzc1MTY0Mi44MDM1OTQsInN1YiI6IjY2YmU1YmM0YmFjMjNmMGMzZjgyOGVkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fOPPMReFnWeQh9Xnqjj-zEkOjDvWn1g35Kt-zSHCSt4")
+                        header("Authorization"   ,  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjFiNDMzYzU0YTQyOGQyNDkyMzA0N2M0YmYwMWZlNSIsIm5iZiI6MTcyMzc1MTY0Mi44MDM1OTQsInN1YiI6IjY2YmU1YmM0YmFjMjNmMGMzZjgyOGVkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fOPPMReFnWeQh9Xnqjj-zEkOjDvWn1g35Kt-zSHCSt4")
                     }
                     .build()
             )
@@ -54,7 +54,7 @@ object NetworkModule {
     @Singleton
     fun provideApi( okHttpClient: OkHttpClient) : Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/account/550/watchlist/")
+            .baseUrl("https://api.themoviedb.org/3/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
