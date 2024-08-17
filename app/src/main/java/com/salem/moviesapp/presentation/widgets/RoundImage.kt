@@ -3,6 +3,7 @@ package com.salem.moviesapp.presentation.widgets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,28 +20,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.salem.moviesapp.R
 import com.spr.jetpack_loading.components.indicators.BallSpinFadeLoaderIndicator
 
 @Composable
-fun RoundImage(url: String) {
+fun RoundImage( url: String  ,  modifier: Modifier = Modifier ) {
 
     var loading by remember { mutableStateOf(true) }
 
     Card(
-        modifier = Modifier
-            .width(100.dp)
-            .height(100.dp)
-        ,
-        shape = RoundedCornerShape(10.dp),
+        modifier = modifier ,
+        shape     = RoundedCornerShape(10.dp)  ,
         elevation = CardDefaults.cardElevation(
             defaultElevation = 3.dp
         )
     ) {
-
-
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center

@@ -1,6 +1,7 @@
 package com.salem.moviesapp.presentation.ui.activites.screens.movies_screen
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,11 +27,13 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.paging.LoadState
 import androidx.paging.compose.items
 import com.salem.moviesapp.domain.models.MoviesResultModel
+import com.salem.moviesapp.presentation.common.Constants.BASE_IMAGE_URL
 import com.salem.moviesapp.presentation.navigations.MovieDetailsScreen
 import com.salem.moviesapp.presentation.widgets.RoundImage
 import kotlinx.coroutines.delay
@@ -60,7 +63,7 @@ fun MovieListScreen(
 
 
 
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+    Scaffold(modifier = Modifier.fillMaxSize().background(Color.White)) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
             LazyColumn(state = lazyColumnState) {
                 items(moviePagingFlow) { movie ->
@@ -110,7 +113,7 @@ fun MoviesItem( moviesResultModel: MoviesResultModel , navController: NavHostCon
             },
         verticalAlignment = Alignment.CenterVertically
     ) {
-        RoundImage("https://image.tmdb.org/t/p/w500/${posterPath}")
+        RoundImage("$BASE_IMAGE_URL${posterPath}" , modifier = Modifier.width(100.dp).height(100.dp))
 
         Spacer(modifier = Modifier.width(20.dp))
 
