@@ -133,5 +133,7 @@ dependencies {
 
     testImplementation ("androidx.arch.core:core-testing:2.1.0")
 
+    testImplementation ("com.google.dagger:hilt-android-testing:2.47")
+
 
 }
