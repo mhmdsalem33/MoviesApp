@@ -1,7 +1,7 @@
 package com.salem.moviesapp.data.data_source.remote.api
 
-import com.salem.moviesapp.data.entity.movies_details.MovieDetailsDto
-import com.salem.moviesapp.data.entity.movies_list.MoviesListDto
+import com.salem.moviesapp.data.models.movies_details.MovieDetailsDto
+import com.salem.moviesapp.data.models.movies_list.MoviesListDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

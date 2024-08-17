@@ -1,8 +1,8 @@
 package com.salem.moviesapp.data.mappers
 
-import com.salem.moviesapp.data.entity.movies_details.GenreDto
-import com.salem.moviesapp.data.entity.movies_details.MovieDetailsDto
-import com.salem.moviesapp.data.entity.movies_list.MoviesResultDto
+import com.salem.moviesapp.data.models.movies_details.GenreDto
+import com.salem.moviesapp.data.models.movies_details.MovieDetailsDto
+import com.salem.moviesapp.data.models.movies_list.MoviesResultDto
 import com.salem.moviesapp.domain.models.GenreModel
 import com.salem.moviesapp.domain.models.MovieModel
 import com.salem.moviesapp.domain.models.MoviesResultModel

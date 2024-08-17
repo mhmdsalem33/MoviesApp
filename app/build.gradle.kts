@@ -40,6 +40,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
+    ndkVersion  = "25.1.8937393"
+    externalNativeBuild {
+        cmake {
+            path = File("CMakeLists.txt")
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -51,6 +60,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
+
 }
 
 dependencies {

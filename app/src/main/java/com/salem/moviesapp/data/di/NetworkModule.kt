@@ -16,6 +16,14 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+    init {
+        System.loadLibrary("native-lib")
+    }
+    private external fun getEncryptedBaseUrl(): String
+    private external fun getEncryptedToken(): String
+
+
     @Provides
     @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
@@ -31,10 +39,10 @@ object NetworkModule {
             chain.proceed(
                 chain.request().newBuilder()
                     .apply {
-                        header("Accept"          , "application/json")
+                        header("Accept"          ,  "application/json")
                         header("Content-Type"    ,  "application/json")
                         header("Accept-Language" ,  "en")
-                        header("Authorization"   ,  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjFiNDMzYzU0YTQyOGQyNDkyMzA0N2M0YmYwMWZlNSIsIm5iZiI6MTcyMzc1MTY0Mi44MDM1OTQsInN1YiI6IjY2YmU1YmM0YmFjMjNmMGMzZjgyOGVkOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fOPPMReFnWeQh9Xnqjj-zEkOjDvWn1g35Kt-zSHCSt4")
+                        header("Authorization"   ,    getEncryptedToken())
                     }
                     .build()
             )
@@ -54,7 +62,7 @@ object NetworkModule {
     @Singleton
     fun provideApi( okHttpClient: OkHttpClient) : Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(getEncryptedBaseUrl())
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
