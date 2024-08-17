@@ -118,12 +118,20 @@ dependencies {
     ksp("androidx.room:room-compiler:2.5.1")
     implementation("androidx.room:room-paging:2.5.1")
 
-
-
     implementation ("com.github.MahboubehSeyedpour:jetpack-loading:1.1.0")
 
+    // JUnit
+    implementation ( "junit:junit:4.13.2" )
 
+    // Mockito
+    implementation ( "org.mockito:mockito-core:4.3.1" )
+    implementation ( "org.mockito.kotlin:mockito-kotlin:4.0.0" )
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
+    // MockK dependencies
+    testImplementation ("io.mockk:mockk:1.13.7")
+
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
 
 
 }
